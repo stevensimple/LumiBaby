@@ -1,4 +1,4 @@
-import Foundation
+import SwiftUI
 import Combine
 
 @MainActor
@@ -23,7 +23,7 @@ class SleepViewModel: ObservableObject {
     }
 
     var durationText: String {
-        guard let mins = tonightSession?.durationMinutes, let mins = mins, mins > 0 else { return "—" }
+        guard let mins = tonightSession?.durationMinutes, mins > 0 else { return "—" }
         let h = Int(mins / 60), m = Int(mins) % 60
         return h > 0 ? "\(h)h \(m)m" : "\(m) min"
     }

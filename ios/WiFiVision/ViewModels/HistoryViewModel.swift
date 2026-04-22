@@ -1,4 +1,4 @@
-import Foundation
+import SwiftUI
 
 @MainActor
 class HistoryViewModel: ObservableObject {
@@ -8,10 +8,8 @@ class HistoryViewModel: ObservableObject {
 
     func load(sensorId: String? = nil) async {
         isLoading = true
-        async let presence = APIService.shared.fetchPresenceHistory(sensorId: sensorId)
-        async let breathing = APIService.shared.fetchBreathingHistory(sensorId: sensorId)
-        presenceHistory = (try? await presence) ?? []
-        breathingHistory = (try? await breathing) ?? []
+        presenceHistory = []
+        breathingHistory = []
         isLoading = false
     }
 
