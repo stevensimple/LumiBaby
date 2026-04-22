@@ -1,0 +1,44 @@
+# Environment
+.env
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+*.db
+*.db-shm
+*.db-wal
+
+# Xcode / iOS
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+DerivedData/
+*.ipa
+*.dSYM.zip
+*.dSYM
+Pods/
+.build/
+
+# ESP-IDF build artifacts
+firmware/esp32-csi/build/
+firmware/esp32-csi/managed_components/
+firmware/esp32-csi/sdkconfig
+firmware/esp32-csi/sdkconfig.old
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# RuView audit (not part of LumiBaby)
+RuView/

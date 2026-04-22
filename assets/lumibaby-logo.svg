@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background gradient: deep midnight blue -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A0E1A"/>
+      <stop offset="100%" stop-color="#0D1530"/>
+    </linearGradient>
+
+    <!-- Baby body gradient: soft warm white -->
+    <linearGradient id="babyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F0F4FF"/>
+      <stop offset="100%" stop-color="#D6E4FF"/>
+    </linearGradient>
+
+    <!-- Moon gradient: soft golden white -->
+    <linearGradient id="moonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5F0E8"/>
+      <stop offset="100%" stop-color="#E8D9B8"/>
+    </linearGradient>
+
+    <!-- Wave glow filter -->
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Subtle drop shadow for baby -->
+    <filter id="babyShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#4E9AF1" flood-opacity="0.2"/>
+    </filter>
+
+    <!-- Rounded square clip path -->
+    <clipPath id="roundedSquare">
+      <rect x="0" y="0" width="512" height="512" rx="112" ry="112"/>
+    </clipPath>
+  </defs>
+
+  <!-- App icon background -->
+  <rect x="0" y="0" width="512" height="512" rx="112" ry="112" fill="url(#bgGrad)"/>
+
+  <!-- Subtle radial glow center -->
+  <radialGradient id="centerGlow" cx="48%" cy="55%" r="45%">
+    <stop offset="0%" stop-color="#1A2A4A" stop-opacity="1"/>
+    <stop offset="100%" stop-color="#0A0E1A" stop-opacity="0"/>
+  </radialGradient>
+  <rect x="0" y="0" width="512" height="512" rx="112" ry="112" fill="url(#centerGlow)"/>
+
+  <!-- ── Sensing wave arcs (behind baby) ── -->
+  <!-- Outermost wave — very subtle -->
+  <path d="M 148 310 Q 200 260 256 280 Q 312 300 364 260"
+        fill="none"
+        stroke="#4E9AF1"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        opacity="0.18"/>
+
+  <!-- Middle wave -->
+  <path d="M 164 330 Q 210 278 256 296 Q 302 314 348 278"
+        fill="none"
+        stroke="#4E9AF1"
+        stroke-width="3"
+        stroke-linecap="round"
+        opacity="0.28"/>
+
+  <!-- Inner wave — closest, brightest -->
+  <path d="M 182 350 Q 220 306 256 318 Q 292 330 330 300"
+        fill="none"
+        stroke="#6DB8F7"
+        stroke-width="3.5"
+        stroke-linecap="round"
+        opacity="0.45"/>
+
+  <!-- ── Baby silhouette (sleeping, side view) ── -->
+  <g filter="url(#babyShadow)">
+    <!-- Baby body: curled oval -->
+    <ellipse cx="256" cy="300" rx="72" ry="50"
+             fill="url(#babyGrad)"
+             opacity="0.96"/>
+
+    <!-- Baby head: circle, offset left and slightly up -->
+    <circle cx="196" cy="258" r="46"
+            fill="url(#babyGrad)"
+            opacity="0.96"/>
+
+    <!-- Baby ear: small half-circle -->
+    <ellipse cx="196" cy="228" rx="12" ry="9"
+             fill="#E8EFFF"
+             opacity="0.7"/>
+
+    <!-- Baby knees: small bump suggesting fetal position -->
+    <ellipse cx="316" cy="310" rx="26" ry="20"
+             fill="url(#babyGrad)"
+             opacity="0.85"/>
+
+    <!-- Closed eye line — sleeping -->
+    <path d="M 183 255 Q 190 249 197 255"
+          fill="none"
+          stroke="#9BB8D4"
+          stroke-width="3"
+          stroke-linecap="round"
+          opacity="0.8"/>
+
+    <!-- Tiny nose dot -->
+    <circle cx="178" cy="267" r="2.5" fill="#B8C8DC" opacity="0.6"/>
+
+    <!-- Peaceful smile curve -->
+    <path d="M 172 278 Q 179 284 187 278"
+          fill="none"
+          stroke="#9BB8D4"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          opacity="0.6"/>
+  </g>
+
+  <!-- ── Crescent moon (upper right) ── -->
+  <g transform="translate(358, 118) rotate(25)">
+    <!-- Full circle then mask to crescent -->
+    <circle cx="0" cy="0" r="32" fill="url(#moonGrad)" opacity="0.95"/>
+    <!-- Cutout circle shifted to create crescent -->
+    <circle cx="18" cy="-8" r="26" fill="#0D1530"/>
+  </g>
+
+  <!-- Small star cluster near moon -->
+  <circle cx="410" cy="90" r="2.2" fill="#F0F4FF" opacity="0.7"/>
+  <circle cx="398" cy="152" r="1.6" fill="#F0F4FF" opacity="0.5"/>
+  <circle cx="430" cy="138" r="1.4" fill="#F0F4FF" opacity="0.45"/>
+  <circle cx="322" cy="108" r="1.8" fill="#F0F4FF" opacity="0.5"/>
+  <circle cx="340" cy="82" r="1.2" fill="#F0F4FF" opacity="0.4"/>
+
+  <!-- Small star lower left (balance) -->
+  <circle cx="102" cy="390" r="1.6" fill="#6DB8F7" opacity="0.35"/>
+  <circle cx="88" cy="360" r="1.2" fill="#6DB8F7" opacity="0.3"/>
+
+  <!-- ── WiFi sensing dots (subtle, lower center) ── -->
+  <circle cx="256" cy="390" r="3.5" fill="#34C759" opacity="0.7"/>
+  <circle cx="232" cy="390" r="2.5" fill="#34C759" opacity="0.35"/>
+  <circle cx="280" cy="390" r="2.5" fill="#34C759" opacity="0.35"/>
+
+  <!-- ── "LumiBaby" wordmark ── -->
+  <!-- "Lumi" in white, "Baby" in primary blue -->
+  <text x="256" y="450"
+        font-family="-apple-system, SF Pro Rounded, SF Pro Display, Helvetica Neue, sans-serif"
+        font-size="38"
+        font-weight="600"
+        letter-spacing="-0.5"
+        text-anchor="middle"
+        fill="#FFFFFF">Lumi<tspan fill="#4E9AF1">Baby</tspan></text>
+</svg>
